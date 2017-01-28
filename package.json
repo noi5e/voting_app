@@ -1,0 +1,32 @@
+{
+  "name": "voting-app",
+  "version": "1.0.0",
+  "description": "Voting App Assignment for FreeCodeCamp",
+  "main": "server.js",
+  "author": "Will G",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "d3": "^4.4.0",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.14.2",
+    "express-validator": "^2.21.0",
+    "hashids": "^1.1.1",
+    "jsdom": "^9.8.3",
+    "mongodb": "^2.2.13",
+    "mongoose": "^4.6.8",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-beta6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}

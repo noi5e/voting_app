@@ -1,0 +1,22 @@
+extends master.pug
+
+block content
+	div(class='col-lg-12')
+		h2(class='page-header') Create New Poll
+
+		if errors
+			each message in errors
+				div(class='alert alert-danger') #{message}
+		else
+			// no errors!
+
+		form(method='post' action='/polls/create_poll')
+			div(class='form-group')
+				label Title:
+				input(type='text' class='form-control' placeholder='Title' name='title')
+
+			div(class='form-group')
+				label Choices (one per line):
+				textarea(class='form-control' id='choices' name='choices' rows='5')
+
+			button(type='submit' class='btn btn-default') Submit

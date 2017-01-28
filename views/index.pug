@@ -1,0 +1,10 @@
+extends master.pug
+
+block content
+	div(class='col-lg-12')
+		h2(class='page-header') All User Polls
+
+		p
+			ul(class='list-group')
+				each title, link in linkTitlePairs
+					a(class='list-group-item' href=link) #{title}

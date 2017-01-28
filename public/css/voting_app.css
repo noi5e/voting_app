@@ -1,0 +1,54 @@
+#container {
+  margin: 0 auto;
+  width: 65%;
+}
+
+.info .table {
+  width: 300px;
+}
+
+.mypolls .table {
+  width: 500px;
+}
+
+.text-right-td {
+  text-align: right;
+}
+
+#vote-container {
+  position: absolute;
+  right: -25%;
+  top: 25%;
+}
+
+.form-control {
+  width: 300px;
+}
+
+#pie-chart {
+  display: inline-block;
+}
+
+#pie-chart-svg {
+  margin: 0 auto;
+  display: block; 
+}
+  
+.arc path {
+  stroke: #fff;
+}
+
+.arc text {
+  font-size: 18px;
+  fill: #fff;
+  text-anchor: middle;
+  text-align: center;
+  font-weight: bold;
+  pointer-events: none;
+  text-shadow: 1px 1px 2px black; 
+}
+
+.input-group .form-control {
+  width: 300px;
+  margin-top: 5px;
+}

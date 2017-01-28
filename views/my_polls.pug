@@ -1,0 +1,16 @@
+extends master.pug
+
+block content
+	div(class='col-lg-12')
+		h2(class='page-header') Your Created Polls
+
+		p
+			form(id='delete-form' action='/polls/delete_poll' method='POST')
+				table(class='my-polls table')
+					each title, code in codeTitlePairs
+						tr
+							td
+								a(href='/polls/' + code) #{title}
+							td(class='text-right-td')
+								button(class="btn btn-md btn-default" name='deleteThis' value=code)
+									span(class='glyphicon glyphicon-trash' aria-hidden='true')

@@ -1,0 +1,49 @@
+extends master.pug
+
+block content
+	div(class='col-lg-12')
+		h2(class='page-header') #{title}
+
+	div(class='col-lg-12')
+		div(id='pie-chart') !{chart}
+
+		div(id='vote-container')
+			table(class='info table')
+				tr
+					th Answer
+					th # of Votes
+					th Percentage
+				each datum in votingInfo
+					tr
+						td #{datum.answerChoice}
+						td #{datum.numberOfVotes}
+						td #{(Number.isNaN(datum.percentageOfVotes)) ? '' : datum.percentageOfVotes + '%'}
+			form(id='voting-form' action='/polls/user_vote' method='POST') 
+				select(class='form-control input-lg voting-select' name='votingSelect')
+					option(value='default') Vote here!
+					each datum in votingInfo
+						option(value=datum.answerChoice) #{datum.answerChoice}
+					option(value='custom-option') I want a custom option...
+				input(type='submit' style='display: none;')
+			a(href="https://twitter.com/intent/tweet?text=Vote%20in%20this%20poll%21" class="twitter-share-button" data-show-count="false") Tweet
+			script(async src="//platform.twitter.com/widgets.js" charset="utf-8")
+			
+block scripts
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+	script.
+		$(function() {
+			var inputShows = false;
+
+			$('.voting-select').change(function() {
+				if ($('.voting-select').val() !== 'custom-option' && $('.voting-select').val() !== 'default') {
+					$('#voting-form').submit();
+				} else if ($('.voting-select').val() === 'custom-option') {
+					if (!inputShows) {
+						inputShows = true;
+
+						$('#voting-form').append($('<div class="input-group"><input type="text" class="form-control" name="customOption" placeholder="Write-in Vote"></div>'));
+					}
+				}
+
+			});
+		});
