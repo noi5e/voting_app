@@ -14,7 +14,7 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var mongo = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/voting_app')
+mongoose.connect(process.env['MONGODB_URI'])
 var db = mongoose.connection;
 
 var routes = require('./routes/index');
