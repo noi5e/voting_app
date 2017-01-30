@@ -1,4 +1,4 @@
-// new server.js
+// old server.js
 
 var express = require('express');
 var path = require('path');
@@ -14,9 +14,7 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var mongo = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
-var mongodbURI = 'mongodb://heroku_ddpl0fr5:llmjps95pqf0flndikm763hnpl@ds135519.mlab.com:35519/heroku_ddpl0fr5';
-
-mongoose.connect(mongodbURI);
+mongoose.connect('mongodb://localhost/voting_app')
 var db = mongoose.connection;
 
 var routes = require('./routes/index');
